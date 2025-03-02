@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Prevent going back to dashboard after logout
+        window.history.forward();
+        function noBack() {
+            window.history.forward();
+        }
+        
+        function confirmAndLogout() {
+            if (confirm("Are you sure you want to logout?")) {
+                // Clear any local storage data
+                localStorage.clear();
+                // Clear any session storage data
+                sessionStorage.clear();
+                // Redirect to logout script
+                window.location.href = "logout.php";
+                return false;
+            }
+            return false;
+        }
+        
+        // Prevent back button after logout
+        window.onload = noBack;
+        window.onpageshow = function(evt) {
+            if (evt.persisted) noBack();
+        };
+        window.onunload = function() {};
+    </script>
+</head>
+<body onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>Admin Dashboard</h1>
+            <a href="javascript:void(0);" onclick="return confirmAndLogout();" class="logout-btn">Logout</a>
+        </header>
+        <aside class="dashboard-sidebar">
+            <ul>
+                <li><a href="admin_overview.html">📊 Dashboard Overview</a></li>
+                <li><a href="staff_management.php">👨‍⚕️ Manage Staff</a></li>
+                <li><a href="monitor_blood_stock.php">🩸 Monitor Blood Stock</a></li>
+                <li><a href="view_donors.php">📜 View Donors</a></li>
+                <li><a href="donation_management.php">💉 Donation Management</a></li>
+            </ul>
+        </aside>
+        <main class="dashboard-main">
+            <h2>Welcome, Admin</h2>
+            <p>Use the navigation menu to manage the blood donation system effectively.</p>
+            <div class="dashboard-cards">
+                <div class="card">
+                    <h3>Blood Stock</h3>
+                    <p>View and manage the current blood inventory.</p>
+                </div>
+                <div class="card">
+                    <h3>Donor Management</h3>
+                    <p>Track registered donors and their details.</p>
+                </div>
+                <div class="card">
+                    <h3>Donation Records</h3>
+                    <p>Manage and track blood donation records.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

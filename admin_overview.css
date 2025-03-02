@@ -1,0 +1,155 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #eafafc, #fdf1f1);
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container Styles */
+.overview-container {
+    width: 90%;
+    max-width: 1200px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Header Section */
+.overview-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.overview-header h1 {
+    font-size: 32px;
+    color: #2c3e50;
+    margin: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* About Us Section */
+.about-us {
+    margin-bottom: 40px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f9f9f9, #fdf1f1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-us h2 {
+    font-size: 26px;
+    color: #34495e;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+.about-us p {
+    font-size: 16px;
+    color: #7f8c8d;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* Admin Features Section */
+.admin-features {
+    margin-bottom: 40px;
+}
+
+.admin-features h2 {
+    font-size: 26px;
+    color: #34495e;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+.admin-features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.admin-features ul li {
+    font-size: 16px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.admin-features ul li:hover {
+    color: #1abc9c;
+    transform: translateX(5px);
+}
+
+.admin-features ul li::before {
+    content: "✔️";
+    color: #1abc9c;
+    margin-right: 10px;
+}
+
+/* Footer Section */
+.overview-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-btn {
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(135deg, #2980b9, #6dd5fa);
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.back-btn:hover {
+    background: linear-gradient(135deg, #1a5276, #3498db);
+    transform: scale(1.05);
+}
+
+/* Keyframes for Smooth Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .overview-container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .about-us h2,
+    .admin-features h2 {
+        font-size: 22px;
+    }
+
+    .about-us p,
+    .admin-features ul li {
+        font-size: 14px;
+    }
+}

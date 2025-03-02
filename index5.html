@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BloodUnity Donor Dashboard</title>
+  <link rel="stylesheet" href="style5.css"> <!-- Link your external CSS -->
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <h1>Welcome to BloodUnity, Donor</h1>
+  </header>
+
+  <!-- Dashboard Layout -->
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <h2>Menu</h2>
+      <ul>
+        <li><a href="#dashboard">🏠 Dashboard</a></li>
+        <li><a href="#donation-history">🩸 My Donation History</a></li>
+        <li><a href="#schedule-appointment">📅 Schedule Appointment</a></li>
+        <li><a href="#blood-availability">💉 Check Blood Availability</a></li>
+        <li><a href="#profile">👤 My Profile</a></li>
+        <li><a href="#feedback">✉️ Feedback</a></li>
+        <li><a href="logout.php">🚪 Logout</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+      <!-- Dashboard Section -->
+      <section id="dashboard">
+        <h2>Dashboard</h2>
+        <p>Welcome to your dashboard! Here you can view your donation history, manage appointments, and track your contribution to saving lives.</p>
+      </section>
+
+      <!-- Donation History Section -->
+      <section id="donation-history">
+        <h2>My Donation History</h2>
+        <p>Track your previous donations, including dates and units donated.</p>
+        <!-- Example Table -->
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Units Donated</th>
+              <th>Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2025-01-01</td>
+              <td>2.5</td>
+              <td>Main City Hospital</td>
+            </tr>
+            <!-- Add rows dynamically via backend -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Schedule Appointment Section -->
+      <section id="schedule-appointment">
+        <h2>Schedule Appointment</h2>
+        <p>Book your next donation appointment with ease.</p>
+        <form action="schedule_appointment.php" method="POST">
+          <label for="date">Select Date:</label>
+          <input type="date" id="date" name="appointment_date" required>
+          <label for="time">Preferred Time:</label>
+          <input type="time" id="time" name="appointment_time" required>
+          <button type="submit">Schedule</button>
+        </form>
+      </section>
+
+      <!-- Blood Availability Section -->
+      <section id="blood-availability">
+        <h2>Check Blood Availability</h2>
+        <p>View available blood types in the inventory.</p>
+        <!-- Example Table -->
+        <table>
+          <thead>
+            <tr>
+              <th>Blood Type</th>
+              <th>Units Available</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A+</td>
+              <td>10</td>
+            </tr>
+            <!-- Add rows dynamically via backend -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Profile Section -->
+      <section id="profile">
+        <h2>My Profile</h2>
+        <p>View and update your personal details.</p>
+        <form action="update_profile.php" method="POST">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" value="John Doe" required>
+          <label for="contact">Contact:</label>
+          <input type="tel" id="contact" name="contact" value="1234567890" required>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" value="johndoe@example.com" required>
+          <button type="submit">Update</button>
+        </form>
+      </section>
+
+      <!-- Feedback Section -->
+      <section id="feedback">
+        <h2>Feedback</h2>
+        <p>We value your feedback! Let us know how we can improve.</p>
+        <form action="submit_feedback.php" method="POST">
+          <textarea name="feedback" rows="5" placeholder="Enter your feedback here..." required></textarea>
+          <button type="submit">Submit Feedback</button>
+        </form>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

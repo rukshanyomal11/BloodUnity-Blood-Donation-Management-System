@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <!-- Background Video -->
+    <video autoplay muted loop id="background-video">
+        <source src="v1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <!-- Login Container -->
+    <div class="register-container">
+        <h1>Login to BloodUnity</h1>
+        <form id="login-form">
+            <!-- Login Type Dropdown -->
+            <div class="form-group">
+                <label for="login-type">Login Type:</label>
+                <select id="login-type" name="login-type" required>
+                    <option value="" disabled selected>Select your role</option>
+                    <option value="donor">Donor</option>
+                    <option value="staff">Staff</option>
+                </select>
+            </div>
+            <!-- Username Field -->
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <!-- Password Field -->
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <!-- Submit Button -->
+            <button type="button" class="btn" onclick="validateLogin()">Login</button>
+        </form>
+        
+        <!-- Link to Registration Page -->
+        <div class="register-link">
+            <p>Don't have an account? <a href="index2.html" class="register-btn">Register here</a></p>
+        </div>
+    </div>
+    
+ 
+</body>
+</html>
